@@ -22,7 +22,8 @@ if [ "${USERNAME}" == "" ]; then
     if [ "${VALIDATE}" == "true" ]; then
     	echo "---Validating installation---"
         ${STEAMCMD_DIR}/steamcmd.sh \
-        +force_install_dir ${SERVER_DIR} \
+        +force_install_dir ${SERVER_DIR} +@sSteamCmdForcePlatformType windows \
+        +force_install_dir ${SERVER_DIR} +@sSteamCmdForcePlatformType linux \
         +login anonymous \
         +app_update ${GAME_ID} validate \
         +quit
